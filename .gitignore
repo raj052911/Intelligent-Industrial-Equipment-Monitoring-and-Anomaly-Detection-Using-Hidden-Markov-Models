@@ -1,0 +1,23 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Generated model and data
+models/*.pkl
+data/processed/*.csv
+data/raw/*.csv
+results/*.png
+
+# Environment variables
+.env

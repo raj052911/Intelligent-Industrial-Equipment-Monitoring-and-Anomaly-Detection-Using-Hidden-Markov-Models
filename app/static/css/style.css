@@ -1,0 +1,49 @@
+﻿:root {
+    --bg: #0b1120;
+    --sidebar: #101a2c;
+    --panel: #121e31;
+    --border: #25354b;
+    --text: #e6edf7;
+    --muted: #8c9bb0;
+    --accent: #43a5f5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, Segoe UI, Arial, sans-serif; }
+.app-layout { display: flex; min-height: 100vh; }
+.sidebar { width: 245px; background: var(--sidebar); padding: 28px 18px; display: flex; flex-direction: column; flex-shrink: 0; border-right: 1px solid var(--border); }
+.brand { display: flex; gap: 12px; align-items: center; margin-bottom: 48px; }
+.brand h5 { font-size: 13px; letter-spacing: 1px; margin: 0; }
+.brand small, .muted, .muted-label { color: var(--muted); }
+.brand-icon { color: var(--accent); font-size: 32px; }
+.nav-heading { color: #64758c; font-size: 10px; letter-spacing: 2px; margin: 0 12px 12px; }
+.nav-link-custom { color: #9eacc0; text-decoration: none; padding: 13px 12px; border-radius: 8px; margin-bottom: 6px; font-size: 14px; }
+.nav-link-custom:hover { background: #1c2c44; color: white; }
+.sidebar-footer { margin-top: auto; padding: 15px 10px; border-top: 1px solid var(--border); color: #c8d4e5; font-size: 12px; }
+.sidebar-footer small { display: block; color: var(--muted); margin-top: 6px; }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #35cf91; margin-right: 6px; }
+.main-content { flex: 1; min-width: 0; }
+.topbar { min-height: 85px; padding: 18px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+.topbar h4 { margin: 5px 0 0; font-size: 19px; }
+.muted-label { font-size: 10px; letter-spacing: 1.4px; }
+.system-status, .live-badge { color: #55dca3; font-size: 11px; letter-spacing: 1px; }
+.page-content { padding: 30px 32px; }
+.welcome-row, .panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+h3 { font-size: 23px; font-weight: 650; }
+.metric-card, .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+.metric-card span { color: var(--muted); font-size: 12px; }
+.metric-card h3 { margin: 14px 0 7px; color: #f0f5ff; font-size: 23px; }
+.metric-card small, .panel small { color: var(--muted); }
+.model-name { font-size: 17px !important; }
+.panel h5 { font-size: 15px; margin-bottom: 9px; }
+.panel-heading { margin-bottom: 22px; }
+.chart-tag { color: var(--accent); font-size: 10px; letter-spacing: 1px; }
+.action-link { color: var(--accent); text-decoration: none; font-size: 13px; }
+.footer { border-top: 1px solid var(--border); padding: 18px 32px; color: #6f8097; font-size: 11px; }
+.table { --bs-table-bg: transparent; --bs-table-color: var(--text); }
+@media(max-width: 800px) {
+    .app-layout { display: block; }
+    .sidebar { width: 100%; padding: 15px; }
+    .brand { margin-bottom: 15px; }
+    .sidebar-footer { display: none; }
+    .topbar, .page-content { padding: 20px; }
+}

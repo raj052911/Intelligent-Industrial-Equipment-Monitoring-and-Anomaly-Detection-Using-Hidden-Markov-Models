@@ -1,0 +1,25 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<h3>HMM Model Analysis</h3>
+<p class="muted">Understand the probabilistic model used by the anomaly detection engine.</p>
+<div class="row g-3 mt-3">
+    <div class="col-md-4"><div class="metric-card"><span>Model Type</span><h3>GaussianHMM</h3><small>Continuous emissions</small></div></div>
+    <div class="col-md-4"><div class="metric-card"><span>Training Method</span><h3>Baum-Welch</h3><small>Expectation-Maximization</small></div></div>
+    <div class="col-md-4"><div class="metric-card"><span>Detection Method</span><h3>Log-Likelihood</h3><small>Sliding-window scoring</small></div></div>
+</div>
+<div class="panel mt-4">
+    <h5>Model Configuration</h5>
+    <p>Hidden states, covariance type, convergence and threshold information will be displayed here after model training.</p>
+    <p class="muted">The selected number of states will be justified using validation experiments, likelihood and model complexity.</p>
+</div>
+<div class="panel mt-4">
+    <h5>How the model works</h5>
+    <ol>
+        <li>Learn normal machine operating patterns.</li>
+        <li>Estimate hidden-state transition probabilities.</li>
+        <li>Model sensor observations using Gaussian distributions.</li>
+        <li>Calculate the likelihood of incoming observation windows.</li>
+        <li>Flag windows whose scores fall below the normal-data threshold.</li>
+    </ol>
+</div>
+{% endblock %}

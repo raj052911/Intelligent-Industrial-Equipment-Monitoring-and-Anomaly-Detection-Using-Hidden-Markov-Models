@@ -1,0 +1,120 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Dashboard Heading -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2>Industrial Monitoring Dashboard</h2>
+            <p class="text-muted">
+                HMM-Based Machine Sensor Anomaly Detection
+            </p>
+        </div>
+
+        <span class="badge bg-success">System Active</span>
+    </div>
+
+
+    <!-- Dashboard Statistics -->
+    <div class="row g-4 mb-4">
+
+        <!-- Total Sensor Readings -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Total Sensor Readings</h6>
+                    <h3 id="total-readings">0</h3>
+                    <small>Readings processed</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Normal Readings -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Normal Readings</h6>
+                    <h3 id="normal-readings">0</h3>
+                    <small>Normal machine behaviour</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detected Anomalies -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Detected Anomalies</h6>
+                    <h3 id="anomaly-count">0</h3>
+                    <small>Abnormal sensor readings</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anomaly Rate -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Anomaly Rate</h6>
+                    <h3 id="anomaly-rate">0%</h3>
+                    <small>Percentage of detected anomalies</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- HMM Hidden States -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">HMM Hidden States</h6>
+                    <h3 id="model-states">-</h3>
+                    <small>Selected model configuration</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Status -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted">Model Status</h6>
+                    <h3 id="model-status">Loading...</h3>
+                    <small>Gaussian HMM status</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Sensor Monitoring Chart -->
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-header">
+            <h5 class="mb-0">Industrial Sensor Monitoring</h5>
+        </div>
+
+        <div class="card-body">
+            <div style="height: 400px;">
+                <canvas id="sensorChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Dashboard JavaScript -->
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+{% endblock %}

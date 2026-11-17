@@ -1,0 +1,17 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<h3>Analytics & Reports</h3>
+<p class="muted">Review model performance and anomaly detection results.</p>
+<div class="row g-3 mt-3">
+    <div class="col-md-6"><div class="panel">
+        <h5>Detection Evaluation</h5>
+        <p class="muted">Precision, recall, F1-score and confusion matrix will appear after evaluation.</p>
+        <div id="evaluation-status">Evaluation results not generated yet.</div>
+    </div></div>
+    <div class="col-md-6"><div class="panel">
+        <h5>Likelihood Analysis</h5>
+        <p class="muted">Compare normal operating likelihood against test-window likelihood.</p>
+        <canvas id="likelihoodChart"></canvas>
+    </div></div>
+</div>
+{% endblock %}
